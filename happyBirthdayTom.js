@@ -77,6 +77,15 @@ let scheduledMessage = new cron.CronJob('* * * * *', () => {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     bot.channels.cache.get('825505907638140969').send("The Wedding is in exactly " + days + " Days, " + hours + " Hours, " + minutes + " Minutes.");
 });
+let scheduledMessage = new cron.CronJob('* * * * *', () => {
+    var countDownDate = new Date("April 1, 2021 13:00:00").getTime();
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    bot.channels.cache.get('825469814759751710').send("The Wedding is in exactly " + days + " Days, " + hours + " Hours, " + minutes + " Minutes.");
+});
 
 scheduledMessage.start()
 happyBirthday.start()
