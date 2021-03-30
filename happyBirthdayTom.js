@@ -23,9 +23,6 @@ bot.once('ready', () => {
 
 bot.on('message', message => {
     console.log(message.author.username, "sent:", message.content);
-    if (blockedUsers.includes(message.author.id)) {
-        return;
-    }
     if (message.content.includes('!!block')) {
         message.channel.send("okay, that user can no longer use commands for the rest of this bot session 🗿")
     }
