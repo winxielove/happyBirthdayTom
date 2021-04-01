@@ -44,17 +44,6 @@ bot.on('message', message => {
         const logU = bot.emojis.cache.find(emoji => emoji.name === "logU");
         message.channel.send(`${logU}`);
      }
-    if(message.content ==='!wedding') {
-        var countDownDate = new Date("April 1, 2021 13:00:00").getTime();
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        message.channel.send("The Wedding is in exactly " + hours + " Hours, " + minutes + " Minutes, and " + seconds + " Seconds.")
-    }
     if(message.content ==='!w') {
   var countDownDate = new Date("April 1, 2021 13:00:00").getTime();
   var now = new Date().getTime();
@@ -65,10 +54,6 @@ bot.on('message', message => {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
         message.channel.send("The Wedding is in exactly " + hours + " Hours, " + minutes + " Minutes, and " + seconds + " Seconds.")
-    }
-    if(message.content === '!bdaywish') {
-        message.channel.bulkDelete(1)
-        bot.channels.cache.get('825457540509728848').send("Happy Birthday <@263862604915539969>")
     }
 });
 let happyBirthday = new cron.CronJob('0 5 * * *', () => {
@@ -84,16 +69,5 @@ let scheduledMessage = new cron.CronJob('* * * * *', () => {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     bot.channels.cache.get('825505907638140969').send("The Wedding is in exactly " + hours + " Hours, " + minutes + " Minutes, and " + seconds + " Seconds.");
 })
-let scheduledDm = new cron.CronJob('* * * * *', () => {
-    var countDownDate = new Date("April 1, 2021 13:00:00").getTime();
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    bot.users.cache.get('381608421906186240').send("The Wedding is in exactly " + hours + " Hours, " + minutes + " Minutes.");
-});
 
 scheduledMessage.start()
-scheduledDm.start()
-happyBirthday.start()
