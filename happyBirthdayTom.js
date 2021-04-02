@@ -28,6 +28,9 @@ bot.on('message', message => {
     if(message.content.includes('!!ban')) {
         message.channel.send('Ok, user banned 🗿 (Case #69420)')
     }
+    if(message.content.includes('!givemod')) {
+        message.channel.send('Okay, they are now a moderator of this server 🗿')
+    }
     if(message.content === 'uwu') {
         message.channel.send('0w0')
     }
@@ -36,6 +39,9 @@ bot.on('message', message => {
     }
     if(message.content === 'h') {
         message.channel.send('h')
+    }
+    if(message.content === 'beef') {
+        message.channel.send('ebef')
     }
     if(message.content === "!logg") {
         message.channel.bulkDelete(1);
